@@ -21,16 +21,22 @@
 * __4. `edit` HTTP Verb `GET` show edit form for selected row Path = `<table name>/<row ID>/edit`__
 * __5. `create` HTTP Verb `POST` writes new row Path = `<table name>`__
 * __6. `update` HTTP Verb `PUT` edits a row Path = `<table name>/<row ID>`__
-* __7. `destroy` HTTP Verb 'DELETE' deletes selected row Path = `<table name>/<row ID>`__
+* __7. `destroy` HTTP Verb `DELETE` deletes selected row Path = `<table name>/<row ID>`__
 
 ## Step Four - Use Rails Console to Create a User
 
-user_params = {"email"=>"mark.c.oliver@gmail.com", "active"=>"1", "created_at(1i)"=>"2019", "created_at(2i)"=>"8", "created_at(3i)"=>"13", "created_at(4i)"=>"23", "created_at(5i)"=>"33", "updated_at(1i)"=>"2019", "updated_at(2i)"=>"8", "updated_at(3i)"=>"13", "updated_at(4i)"=>"23", "updated_at(5i)"=>"33"}
-</br>
-user = User.create(user_params)
-</br></br>
-user_params = {"email"=>"nhmarkco@yahoo.com", "active"=>"0", "created_at(1i)"=>"2019", "created_at(2i)"=>"8", "created_at(3i)"=>"13", "created_at(4i)"=>"23", "created_at(5i)"=>"33", "updated_at(1i)"=>"2019", "updated_at(2i)"=>"8", "updated_at(3i)"=>"13", "updated_at(4i)"=>"23", "updated_at(5i)"=>"33"}
-</br>
-user = User.create(user_params)
+now = Time.now
+<br/>
+User.create([:email => "nhmarkco@yahoo.com", :active => false, :created_at => now, :updated_at => now])
+<br/><br/>
+now = Time.now
+<br/>
+User.create([:email => "mark.c.oliver@gmail.com", :active => true, :completed_at => now, :updated_at => now])
+
+
+
+
+
+
 
 
